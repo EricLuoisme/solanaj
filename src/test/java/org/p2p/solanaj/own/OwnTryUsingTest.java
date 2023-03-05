@@ -1,5 +1,6 @@
 package org.p2p.solanaj.own;
 
+import org.bitcoinj.core.Base58;
 import org.junit.Test;
 import org.p2p.solanaj.core.PublicKey;
 import org.p2p.solanaj.rpc.RpcClient;
@@ -14,6 +15,11 @@ public class OwnTryUsingTest {
     public void balanceRetrieving() throws RpcException {
         long balance = rpcClient.getApi().getBalance(account);
         System.out.println(balance);
+    }
+
+    @Test
+    public void decodeCheck() {
+        System.out.println(Base58.decodeChecked("AnayTW335MabjhtXTJeBit5jdLhNeUVBVPXeRKCid79D"));
     }
 
 }
